@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Node.js CRUD App</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 20px;
+    }
+
+    h1, h2 {
+      color: #333;
+    }
+
+    ul {
+      list-style: none;
+      padding: 0;
+    }
+
+    li {
+      border: 1px solid #ddd;
+      margin: 5px 0;
+      padding: 10px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    form {
+      max-width: 400px;
+      margin-top: 20px;
+    }
+
+    label {
+      display: block;
+      margin-bottom: 5px;
+    }
+
+    input {
+      width: 100%;
+      padding: 8px;
+      margin-bottom: 10px;
+      box-sizing: border-box;
+    }
+
+    button {
+      background-color: #4CAF50;
+      color: white;
+      padding: 10px 15px;
+      border: none;
+      cursor: pointer;
+      border-radius: 5px;
+    }
+
+    a {
+      text-decoration: none;
+      margin-left: 10px;
+      color: #3498db;
+    }
+  </style>
+</head>
+<body>
+  
+
+  <h2>Edit User</h2>
+  <form action="/editData" method="post">
+    <input type="hidden" value="<%=user[0].id%>" 
+    name="hid">
+    <label for="name">Name:</label>
+    <input type="text" id="name" name="name" required value="<%=user[0].name%>">
+    <label for="email">Email:</label>
+    <input type="email" id="email" name="email" required value="<%=user[0].email%>">
+    <button type="submit">Update User</button>
+  </form>
+</body>
+</html>
